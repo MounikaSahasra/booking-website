@@ -1,0 +1,173 @@
+.admin-dashboard-content {
+  background-color: #4A4F89;
+  padding: 2rem;
+  color: white;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.chart-section {
+  margin-bottom: 2rem;
+}
+
+.chart-placeholder {
+  height: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-style: italic;
+  font-size: 1.2rem;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.calendar-details-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.calendar-box,
+.details-box {
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.highlight-booked {
+  background-color: #ffc107 !important;
+  color: black !important;
+  border-radius: 50% !important;
+}
+
+.appointment-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.status.approved {
+  color: #00ff9d;
+}
+
+.status.pending {
+  color: #ffc107;
+}
+
+.status.rejected {
+  color: #ff6b6b;
+}
+
+.no-appointments {
+  font-style: italic;
+  color: #ccc;
+}
+
+
+
+
+
+.admin-sidebar {
+  width: 240px;
+  background-color: #2f3264;
+  color: white;
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sidebar-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar-links li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  background-color: #444980;
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.logout-section {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #ff6b6b;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.logout-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

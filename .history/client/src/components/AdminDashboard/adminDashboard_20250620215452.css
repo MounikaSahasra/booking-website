@@ -1,0 +1,206 @@
+.admin-dashboard-layout {
+  padding: 2rem;
+  background-color: #4A4F89;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== TOP SECTION ========== */
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.pie-chart-container {
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.summary-cards {
+  flex: 2 1 400px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.stat-card {
+  flex: 1 1 160px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.stat-card.total { color: #ffffff; }
+.stat-card.approved { color: #00ff9d; }
+.stat-card.pending { color: #ffc107; }
+.stat-card.rejected { color: #ff4c4c; }
+
+/* ========== BOTTOM SECTION ========== */
+.calendar-appointments-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.calendar-box,
+.appointment-details-box {
+  flex: 1 1 350px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Calendar highlight */
+.highlight-booked {
+  background-color: #ffc107 !important;
+  color: black !important;
+  border-radius: 50% !important;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+
+/* Appointment Cards */
+.appointment-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+/* Status Labels */
+.status-label {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.status-label.approved {
+  background-color: rgba(0, 255, 157, 0.15);
+  color: #00ff9d;
+}
+.status-label.pending {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+.status-label.rejected {
+  background-color: rgba(255, 75, 75, 0.15);
+  color: #ff4c4c;
+}
+
+.no-appointments {
+  font-style: italic;
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+/* 
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #2f3264;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.admin-sidebar h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background-color: #444980;
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+}
+
+.logout-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.logout-section a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  color: #ff6b6b;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.logout-section a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content should leave space for sidebar */
+.dashboard-content {
+  margin-left: 240px;
+  padding: 40px;
+  min-height: 100vh;
+  background-color: #4A4F89;
+  color: white;
+}
+
+/* Optional: Make sidebar scrollable if content is long */
+.admin-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}

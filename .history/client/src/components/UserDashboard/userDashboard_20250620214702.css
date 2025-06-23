@@ -1,0 +1,49 @@
+.calendar-slots-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.slots-wrapper {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeslot-group h4 {
+  color: #a0f6ff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.slot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.slot-row button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.slot-row button.selected,
+.slot-row button:hover {
+  background-color: #ffde59;
+  color: #2c2c2c;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .calendar-slots-container {
+    flex-direction: column;
+  }
+}

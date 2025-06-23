@@ -1,0 +1,357 @@
+/* Base container */
+.user-main-area {
+  padding: 40px;
+  background-color: #4A4F89;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.user-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.user-dashboard-content {
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #4A4F89;
+  padding: 20px;
+}
+
+/* Welcome banner */
+.welcome-banner {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 24px 32px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease;
+}
+
+.welcome-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.welcome-banner p {
+  font-size: 1.1rem;
+  color: #dcdcdc;
+}
+
+/* Booking card */
+.booking-card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  animation: slideUp 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.booking-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ffeaa7;
+}
+
+.booking-card input,
+.booking-card textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.booking-card input::placeholder,
+.booking-card textarea::placeholder {
+  color: #d2d2d2;
+}
+
+.booking-card input:focus,
+.booking-card textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Calendar + Time slots layout */
+.calendar-slots-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.calendar-wrapper {
+  flex: 1 1 280px;
+}
+
+.calendar-wrapper label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  color: #ffeaa7;
+}
+
+.react-calendar {
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #f9f9f91a;
+  color: #fff;
+}
+
+.react-calendar__tile--active {
+  background: #ffde59 !important;
+  color: #333 !important;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.slots-wrapper {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeslot-group h4 {
+  color: #a0f6ff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.slot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.slot-row button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.slot-row button.selected,
+.slot-row button:hover {
+  background-color: #ffde59;
+  color: #2c2c2c;
+  transform: scale(1.05);
+}
+
+/* Book Button */
+.book-btn {
+  margin-top: 16px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 14px;
+  background-color: #f9d25c;
+  color: #2c2c2c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.book-btn:hover {
+  background-color: #d4b045;
+  transform: scale(1.05);
+}
+
+/* Upcoming appointments */
+.upcoming-appointments {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.6s ease;
+}
+
+.upcoming-appointments h3 {
+  font-size: 1.4rem;
+  color: #a0f6ff;
+  margin-bottom: 16px;
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.appointment-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 5px solid #ffc107;
+  padding: 14px 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-2px);
+}
+
+.empty-msg {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-main-area {
+    padding: 20px;
+  }
+
+  .calendar-slots-container {
+    flex-direction: column;
+  }
+
+  .slot-row {
+    flex-direction: column;
+  }
+
+  .react-calendar {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* User Dashboard */
+
+/* ----- Sidebar Layout ----- */
+.user-dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ----- Fixed Sidebar ----- */
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #2f3264;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.2rem;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Sidebar Title */
+.admin-sidebar h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ----- Navigation ----- */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: #444980;
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+}
+
+/* ----- Logout Section ----- */
+.logout-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.logout-section a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  color: #ff6b6b;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.logout-section a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ----- Main Content Wrapper (adjust this if needed) ----- */
+.user-dashboard-content {
+  margin-left: 240px;
+  padding: 2rem;
+  flex-grow: 1;
+  background-color: #4A4F89;
+  min-height: 100vh;
+  color: white;
+  overflow-y: auto;
+}

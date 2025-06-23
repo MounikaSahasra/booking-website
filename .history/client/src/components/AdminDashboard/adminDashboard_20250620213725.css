@@ -1,0 +1,103 @@
+.admin-dashboard-layout {
+  padding: 2rem;
+  background-color: #4A4F89;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.stat-card.approved { color: #00ff9d; }
+.stat-card.pending { color: #ffc107; }
+.stat-card.rejected { color: #ff4c4c; }
+
+/* Pie Chart */
+.pie-chart-container {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+/* Calendar & Appointments */
+.calendar-appointments-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.calendar-box,
+.appointment-details-box {
+  flex: 1 1 350px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Calendar Date Highlight */
+.highlight-booked {
+  background-color: #ffc107 !important;
+  color: black !important;
+  border-radius: 50% !important;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+
+/* Appointment List */
+.appointment-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.status-label {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.status-label.approved {
+  background-color: rgba(0, 255, 157, 0.15);
+  color: #00ff9d;
+}
+.status-label.pending {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+.status-label.rejected {
+  background-color: rgba(255, 75, 75, 0.15);
+  color: #ff4c4c;
+}
+
+.no-appointments {
+  font-style: italic;
+  color: #ccc;
+  margin-top: 1rem;
+}

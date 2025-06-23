@@ -1,0 +1,120 @@
+/* ========== Layout Wrapper ========== */
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ========== Sidebar (Common for User & Admin) ========== */
+.admin-sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #2f3264;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.2rem;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  position: relative;
+}
+
+/* Sidebar Title */
+.sidebar-title,
+.admin-sidebar h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* Sidebar Links */
+.sidebar-nav,
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidebar-nav a,
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  background-color: #444980;
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+}
+
+/* Logout Section */
+.logout-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.logout-link,
+.logout-section a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  color: #ff6b6b;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.logout-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========== Dashboard Main Content ========== */
+.dashboard-content,
+.admin-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #4A4F89;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+}
