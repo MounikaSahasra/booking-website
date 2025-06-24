@@ -8,11 +8,18 @@ dotenv.config();
 const app = express();
 connectDB();
 
-// ✅ CORS: Allow frontend hosted on Firebase
+// ✅ Fix for preflight CORS issues (use function instead of object shorthand)
 app.use(cors({
-  origin: "https://appointment-booking-syst-ad120.web.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  origin: (origin, callback) => {
+    const allowedOrigins = ["https://appointment-booking-syst-ad120.web.app"];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
 }));
 
 app.use(express.json());
