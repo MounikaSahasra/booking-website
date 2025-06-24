@@ -8,16 +8,22 @@ dotenv.config();
 const app = express();
 connectDB();
 
-// ✅ Fix for preflight CORS issues (use function instead of object shorthand)
-app.use(cors({
+// ✅ CORS Configuration (with preflight OPTIONS support)
+const corsOptions = {
   origin: (origin, callback) => {
-    const allowed = ["https://appointment-booking-syst-ad120.web.app"];
-    if (!origin || allowed.includes(origin)) callback(null, true);
-    else callback(new Error("CORS not allowed"));
+    const allowedOrigins = ["https://appointment-booking-syst-ad120.web.app"];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
-}));
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // ✅ Preflight handler
 
 app.use(express.json());
 
@@ -30,5 +36,6 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
+// Server Start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
