@@ -11,15 +11,12 @@ connectDB();
 // ✅ Fix for preflight CORS issues (use function instead of object shorthand)
 app.use(cors({
   origin: (origin, callback) => {
-    const allowedOrigins = ["https://appointment-booking-syst-ad120.web.app"];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
+    const allowed = ["https://appointment-booking-syst-ad120.web.app"];
+    if (!origin || allowed.includes(origin)) callback(null, true);
+    else callback(new Error("CORS not allowed"));
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true,
+  credentials: true
 }));
 
 app.use(express.json());
