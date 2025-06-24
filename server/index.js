@@ -1,24 +1,19 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors"); // ✅ Import CORS
 const connectDB = require("./config/db");
 
 dotenv.config();
 const app = express();
 connectDB();
 
-// ✅ Custom CORS middleware
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://appointment-booking-syst-ad120.web.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(204); // Preflight request
-  }
-
-  next();
-});
+// ✅ CORS setup using `cors` package
+app.use(cors({
+  origin: "https://appointment-booking-syst-ad120.web.app", // ✅ Allow your frontend
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
 
 app.use(express.json());
 
@@ -28,8 +23,9 @@ app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
 // ✅ Default route
 app.get("/", (req, res) => {
-  res.json({ message: "API is running with manual CORS config" });
+  res.json({ message: "API is running with full CORS support" });
 });
 
+// ✅ Start the server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
