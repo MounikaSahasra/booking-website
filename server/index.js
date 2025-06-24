@@ -9,12 +9,11 @@ const app = express();
 connectDB();
 
 // ✅ CORS: Allow frontend hosted on Firebase
-app.use(
-  cors({
-    origin: "https://appointment-booking-syst-ad120.web.app",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: "https://appointment-booking-syst-ad120.web.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(express.json());
 
