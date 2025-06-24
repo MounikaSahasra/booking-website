@@ -7,19 +7,23 @@ dotenv.config();
 const app = express();
 connectDB();
 
-// ✅ CORS Middleware
+// ✅ Set correct CORS config with preflight support
 const corsOptions = {
   origin: "https://appointment-booking-syst-ad120.web.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 };
 
+// ✅ Middleware setup
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // ✅ Handles preflight requests
+
+// ✅ Handle preflight (OPTIONS) requests globally
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
-// ✅ Route Mounting Order (AFTER middleware)
+// ✅ Your routes
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/appointments', require('./routes/appointmentRoutes'));
 
