@@ -20,7 +20,7 @@ function ManageAppointments() {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.patch(`https://booking-backend.onrender.com/api/appointments/${id}/status`, { status });
+      await axios.patch(`http://localhost:5000/api/appointments/${id}/status`, { status });
       fetchAppointments(); // Refresh the list
     } catch (err) {
       console.error("Failed to update status:", err);

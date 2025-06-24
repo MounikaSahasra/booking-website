@@ -37,43 +37,43 @@ useEffect(() => {
 
   
 
-const handleBookNow = async () => {
-  if (!formData.name || !formData.reason || !formData.time || !selectedDate) {
-    alert("Please fill out all fields.");
-    return;
-  }
+  const handleBookNow = async () => {
+    if (!formData.name || !formData.reason || !formData.time || !selectedDate) {
+      alert("Please fill out all fields.");
+      return;
+    }
 
-  if (!userId) {
-    alert("⚠️ Please login to book an appointment.");
-    return;
-  }
+    if (!userId) {
+      alert("⚠️ Please login to book an appointment.");
+      return;
+    }
 
-  const appointmentData = {
-    userId,
-    name: formData.name,
-    reason: formData.reason,
-    time: formData.time,
-    date: selectedDate,
-    status: "pending",
+    const appointmentData = {
+      userId,
+      name: formData.name,
+      reason: formData.reason,
+      time: formData.time,
+      date: selectedDate,
+      status: "pending",
+    };
+
+    try {
+      await axios.post("http://localhost:5000/api/appointments", appointmentData);
+      alert("✅ Appointment booked successfully!");
+      setFormData({ name: "", reason: "", time: "" });
+      setUpcomingAppointments([
+        ...upcomingAppointments,
+        {
+          date: selectedDate.toISOString().split("T")[0],
+          time: formData.time,
+          reason: formData.reason,
+        },
+      ]);
+    } catch (error) {
+      console.error("Booking failed:", error);
+      alert("❌ Could not book appointment");
+    }
   };
-
-  try {
-    await axios.post("https://booking-backend.onrender.com/api/appointments", appointmentData);
-    alert("✅ Appointment booked successfully!");
-    setFormData({ name: "", reason: "", time: "" });
-    setUpcomingAppointments([
-      ...upcomingAppointments,
-      {
-        date: selectedDate.toISOString().split("T")[0],
-        time: formData.time,
-        reason: formData.reason,
-      },
-    ]);
-  } catch (error) {
-    console.error("Booking failed:", error);
-    alert("❌ Could not book appointment");
-  }
-};
 
   return (
     <main className="user-dashboard-content">

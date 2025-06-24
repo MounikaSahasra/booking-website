@@ -14,6 +14,7 @@ function AdminDashboard() {
   useEffect(() => {
     axios
       .get("https://booking-backend.onrender.com/api/appointments")
+
       .then((res) => setAppointments(res.data))
       .catch((err) => console.error(err));
   }, []);

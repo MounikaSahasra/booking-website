@@ -8,14 +8,8 @@ dotenv.config();
 const app = express();
 connectDB();
 
-// ✅ CORS: Allow frontend hosted on Firebase
-app.use(
-  cors({
-    origin: "https://appointment-booking-syst-ad120.web.app",
-    credentials: true,
-  })
-);
-
+// Middleware
+app.use(cors());
 app.use(express.json());
 
 // Routes
